@@ -1,9 +1,8 @@
 package br.com.cinq.greet;
 
 import org.glassfish.jersey.server.ResourceConfig;
+import org.glassfish.jersey.servlet.ServletProperties;
 import org.springframework.stereotype.Service;
-
-import br.com.cinq.greet.resource.GreetResource;
 
 /**
  * Register Jersey modules
@@ -13,6 +12,7 @@ import br.com.cinq.greet.resource.GreetResource;
 public class Config extends ResourceConfig {
 
 	public Config() {
-		register(GreetResource.class);
+		packages("br.com.cinq.greet");
+		property(ServletProperties.FILTER_FORWARD_ON_404, true);
 	}
 }

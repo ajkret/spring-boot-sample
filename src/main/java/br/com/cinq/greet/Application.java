@@ -10,18 +10,15 @@ import org.springframework.context.annotation.ComponentScan;
  * Greeting Service.
  */
 @SpringBootApplication
-@ComponentScan(basePackages = {"br.com.cinq"})   
-@EnableAutoConfiguration
+@ComponentScan(basePackages = { "br.com.cinq.greet" })
 public class Application extends SpringBootServletInitializer {
 
 	@Override
-	protected SpringApplicationBuilder configure(
-			SpringApplicationBuilder application) {
+	protected SpringApplicationBuilder configure(SpringApplicationBuilder application) {
 		return application.sources(Application.class);
 	}
 
 	public static void main(String[] args) {
-		new Application().configure(
-				new SpringApplicationBuilder(Application.class)).run(args);
+		new Application().configure(new SpringApplicationBuilder(Application.class)).run(args);
 	}
 }
