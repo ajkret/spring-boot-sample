@@ -3,6 +3,7 @@ package br.com.cinq.greet;
 import javax.ws.rs.ApplicationPath;
 
 import org.glassfish.jersey.server.ResourceConfig;
+import org.glassfish.jersey.servlet.ServletProperties;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
@@ -14,13 +15,13 @@ import br.com.cinq.greet.resource.GreetResource;
  * @author Adriano Kretschmer
  */
 @Configuration
-@ApplicationPath("/rest")
+@ApplicationPath("rest")
 public class Config extends ResourceConfig {
 
 	public Config() {
 		register(GreetResource.class);
-		//		packages("br.com.cinq.greet");
-		//		property(ServletProperties.FILTER_FORWARD_ON_404, true);
+//		packages("br.com.cinq.greet.resource");
+//		property(ServletProperties.FILTER_FORWARD_ON_404, true);
 	}
 	
 	@Bean

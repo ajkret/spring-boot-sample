@@ -28,14 +28,28 @@ assist in tracking down the root of these bugs. -->
 	<div class="dotted-frame">
 		<div class="row">
 			<div class="col-md-8 col-xs-12">Main application</div>
+			<div class="col-md-8 col-xs-12">
+				<div ng-view></div>
+			</div>
+
 		</div>
 	</div>
 
+	<!--  Libraries -->
+	<script src="bower_components/jquery/dist/jquery.min.js"></script>
+	<script src="bower_components/angular/angular.min.js"></script>
+	<script src="bower_components/angular-route/angular-route.min.js"></script>
+
 
 	<!--  Scripts in the end -->
+	<!--  Configuration -->
 	<script src="app/app.module.js"></script>
+	<script src="app/app.router.js"></script>
 
-	<script src="bower_components/jquery/dist/jquery.js"></script>
-	<script src="bower_components/angular/angular.js"></script>
+	<!--  Controllers -->
+	<script src="app/components/greet/greet.js"></script>
+	<script src="app/components/config/config.js"></script>
+
+
 </body>
 </html>
