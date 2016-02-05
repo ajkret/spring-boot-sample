@@ -46,7 +46,7 @@ public class EndpointTest {
 		HttpEntity<String> entity = new HttpEntity<String>(headers);
 
 		ResponseEntity<Greet> response = this.restTemplate.exchange(
-				this.localhost + this.port + "/greet", HttpMethod.GET, entity, Greet.class);
+				this.localhost + this.port + "/rest/greet", HttpMethod.GET, entity, Greet.class);
 
 		Assert.assertEquals(HttpStatus.OK, response.getStatusCode());
 		Greet greet = response.getBody();
@@ -67,7 +67,7 @@ public class EndpointTest {
 		HttpEntity<Greet> entity = new HttpEntity<Greet>(greet, headers);
 
 		ResponseEntity<Void> response = this.restTemplate.exchange(
-				this.localhost + this.port + "/greet", HttpMethod.POST, entity, Void.class);
+				this.localhost + this.port + "/rest/greet", HttpMethod.POST, entity, Void.class);
 
 		Assert.assertEquals(HttpStatus.OK, response.getStatusCode());
 
@@ -77,7 +77,7 @@ public class EndpointTest {
 		HttpEntity<String> request = new HttpEntity<String>(headers);
 
 		ResponseEntity<Greet> result = this.restTemplate.exchange(
-				this.localhost + this.port + "/greet", HttpMethod.GET, entity, Greet.class);
+				this.localhost + this.port + "/rest/greet", HttpMethod.GET, entity, Greet.class);
 
 		Assert.assertEquals(HttpStatus.OK, response.getStatusCode());
 		greet = result.getBody();
