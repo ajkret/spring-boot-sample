@@ -1,20 +1,22 @@
 (function() {
 	'use strict';
 
-	angular.module('app').config([ '$routeProvider', routing ]);
+	angular.module('app').config([ '$routeProvider', '$locationProvider', routing ]);
 
-	function routing($routeProvider) {
+	function routing($routeProvider, $locationProvider) {
 		$routeProvider.when('/greet', {
 			templateUrl : 'app/components/greet/greet.html',
-			controller : 'GreetingCtrl',
-			controllerAs : 'greet'
+			controller : 'GreetingCtrl'
 		}).when('/config', {
 			templateUrl : 'app/components/config/config.html',
-			controller : 'ConfigCtrl',
-			controllerAs : 'config'
+			controller : 'ConfigCtrl'
 		}).otherwise({
 			redirectTo : '/greet'
 		});
+		
+		$locationProvider.html5Mode($locationProvider.html5Mode({
+			  enabled: false
+			}));
 	}
 
 })();

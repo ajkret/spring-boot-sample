@@ -5,6 +5,7 @@ are thus unsuitable for minification), as described in the Dependency Injection 
 assist in tracking down the root of these bugs. -->
 <html data-ng-app="app" ng-strict-di>
 <head>
+<base href='/greet-server/' />
 <meta charset="utf-8" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no" />
@@ -22,34 +23,39 @@ assist in tracking down the root of these bugs. -->
 
 <link href="app/assets/css/styles.css" rel="stylesheet" />
 
+
 </head>
 <body>
 
 	<div class="dotted-frame">
 		<div class="row">
-			<div class="col-md-8 col-xs-12">Main application</div>
-			<div class="col-md-8 col-xs-12">
-				<div ng-view></div>
+			<div class="col-md-8 col-md-offset-2 col-sm-12">
+				<div class="panel panel-primary">
+					<div class="panel-heading">Main application</div>
+					<div class="panel-body">
+						<div ng-view></div>
+					</div>
+				</div>
+
 			</div>
-
 		</div>
-	</div>
 
-	<!--  Libraries -->
-	<script src="bower_components/jquery/dist/jquery.min.js"></script>
-	<script src="bower_components/angular/angular.min.js"></script>
-	<script src="bower_components/angular-route/angular-route.min.js"></script>
-
-
-	<!--  Scripts in the end -->
-	<!--  Configuration -->
-	<script src="app/app.module.js"></script>
-	<script src="app/app.router.js"></script>
-
-	<!--  Controllers -->
-	<script src="app/components/greet/greet.js"></script>
-	<script src="app/components/config/config.js"></script>
+		<!--  Libraries -->
+		<script src="bower_components/jquery/dist/jquery.js"></script>
+		<script src="bower_components/angular/angular.js"></script>
+		<script src="bower_components/angular-route/angular-route.js"></script>
+		<script src="bower_components/angular-resource/angular-resource.js"></script>
 
 
+		<!--  Scripts in the end -->
+		<script src="app/app.module.js"></script>
+
+		<!--  Controllers -->
+		<script src="app/components/config/config.service.js"></script>
+		<script src="app/components/greet/greet.js"></script>
+		<script src="app/components/config/config.js"></script>
+
+		<!--  Configuration -->
+		<script src="app/app.router.js"></script>
 </body>
 </html>

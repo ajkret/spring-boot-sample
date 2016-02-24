@@ -1,9 +1,9 @@
 (function() {
 	'use strict';
 
-	angular.module('app').controller('ConfigCtrl', ConfigCtrl);
+	angular.module('app').controller('ConfigCtrl', ['GreetingService', ConfigCtrl ]);
 	
-	function ConfigCtrl() {
+	function ConfigCtrl($greet) {
 		
 	}
 })();

@@ -1,1 +1,6 @@
-<div>Hello beauty!!</div>
+<div ng-controller="GreetingCtrl as greet">
+	<div class="row">
+		<div class="col-sm-12 col-md-4 col-lg-4 col-xl-4">Greetings</div>
+		<div class="col-sm-12 col-md-4 col-lg-4 col-xl-4">{{greet.messageOfTheDay.message}}</div>
+	</div>
+</div>

@@ -1,9 +1,10 @@
 (function() {
 	'use strict';
 
-	angular.module('app').controller('GreetingCtrl', ['GreetingService'], GreetController);
+	angular.module('app').controller('GreetingCtrl', ['GreetingService', GreetingController]);
 	
-	function GreetController($service) {
-		
+	function GreetingController($greetingService) {
+		// messageOfTheDay will be an object {"message":"Hello World"}
+		this.messageOfTheDay = $greetingService.get();
 	}
 })();
