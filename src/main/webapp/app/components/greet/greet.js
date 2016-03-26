@@ -3,9 +3,9 @@
 
 	angular.module('app').controller('GreetingCtrl', GreetController);
 	
-	GreetController.$inject = ['GreetingService'];
+	GreetController.$inject = ['GreetingService','$location','$scope'];
 
-	function GreetController($service) {
+	function GreetController($service, $location, $scope) {
 		var controller = this;
 		var message;
 		
@@ -15,6 +15,11 @@
 			});
 		}
 		
+		function configure() {
+            $location.url('config');
+		}
+
+		$scope.configure = configure;
 		
 		// Bootstrap
 		get();
