@@ -9,7 +9,7 @@ Scaffold Maven project with spring-boot. Included BOWER configuration for Angula
 This branch has all the server side classes implemented, running Jersey to resolve the REST services and Spring
 Web to test them.
 
-Also implements the Client side using Angular (1.4).
+Also implements the Client side using Angular (1.5.3) and Bootstrap 3.
 
 The project aims to follow the guidelines from the following resources:
 * https://github.com/johnpapa/angular-styleguide
