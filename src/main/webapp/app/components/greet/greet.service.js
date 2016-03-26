@@ -12,7 +12,7 @@
                 timeout : 10000,
                 isArray : false
             },
-            set : {
+            save : {
                 method : 'POST',
                 timeout : 10000
             }
